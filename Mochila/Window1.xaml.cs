@@ -26,6 +26,7 @@ namespace mochila
         string rutaEnsamblado = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\";
         string separadoresPalabra = " ,.;:?!-+\r\n";
         Texto adminTexto = new Texto();
+        
 
         public Window1()
         {
@@ -34,7 +35,7 @@ namespace mochila
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            abrirRTF(richTextBox1, "prueba.rtf");
+            hoja.abrirRTF("prueba.rtf");
         }
 
         string getPalabra(RichTextBox rtf) //listo
@@ -492,13 +493,15 @@ namespace mochila
             //if (swFinDeLaHoja(richTextBox1))
             //    label1.Content += ", fin de la hoja";
 
-            TextSelection texto = richTextBox1.Selection;
+            //TextSelection texto = richTextBox1.Selection;
             //Texto txt = new Texto();
             //txt.pasarANegrita(texto);
             Calculadora calc = new Calculadora();
-            calc.parsearCadena(texto.Text);
+            //calc.parsearCadena(texto.Text);
+            //calc.result;
             label1.Content = calc.result;
-            swEstáEnNegrita(richTextBox1.Selection);
+            if (swEstáEnNegrita(hoja.rtf.Selection))
+                label1.Content = "negrita";
             //Paragraph párrafo = richTextBox1.CaretPosition.Paragraph;
             //Inline textoInterno = párrafo.Inlines.FirstInline;
 
@@ -508,6 +511,13 @@ namespace mochila
             //    label1.Content = "en negrita";
             //else
             //    label1.Content = textoInterno;//cadena;//"nones";
+            SpellingError error = hoja.chequearOrtografíaEnPosActual();
+            if (error != null)
+            {
+                foreach (string suggession in error.Suggestions)
+                    //lstSuggessions.Items.Add(suggession);
+                    label1.Content += suggession + " ";
+            }
 
         }
 

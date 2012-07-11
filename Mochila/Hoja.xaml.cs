@@ -1,20 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.IO;
+
 
 namespace mochila
 {
-    class Hoja : RichTextBox
-    {
-        string rutaEnsamblado = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\";
+	/// <summary>
+	/// Lógica de interacción para Hoja.xaml
+	/// </summary>
+	public partial class Hoja : UserControl
+	{
+		string rutaEnsamblado = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\";
         string separadoresPalabra = " ,.;:?!-+\r\n";
+		
+		public Hoja()
+		{
+			this.InitializeComponent();
+		}
 
-        string getPalabra(RichTextBox rtf) //listo
+        //public static readonly DependencyProperty DocumentProperty =
+        //    DependencyProperty.Register("Document", typeof(FlowDocument), typeof(Hoja),
+        //    new PropertyMetadata(OnDocumentChanged));
+
+        //public FlowDocument Document
+        //{
+        //    get { return (FlowDocument)GetValue(DocumentProperty); }
+        //    set { SetValue(DocumentProperty, value); }
+        //}
+
+        //private static void OnDocumentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        //{
+        //    var control = (Hoja)d;
+        //    if (e.NewValue == null)
+        //        control.rtf.Document = new FlowDocument();
+
+        //    //?
+        //    //control.rtf.Document = document;
+        //}
+
+        string getPalabra() //listo
         {
             string cadenaInicio;
             string cadenaFin;
@@ -80,7 +128,7 @@ namespace mochila
             return cadena.Substring(0, cont);
         }
 
-        string getTextoRenglónActual(RichTextBox rtf) //listo
+        string getTextoRenglónActual() //listo
         {
             string renglón = "";
             TextPointer punteroInicioRenglón = rtf.Selection.Start.GetLineStartPosition(0);
@@ -95,18 +143,18 @@ namespace mochila
             return renglón;
         }
 
-        Paragraph getPárrafoActual(RichTextBox rtf) //listo
+        Paragraph getPárrafoActual() //listo
         {
             return rtf.CaretPosition.Paragraph;
         }
 
-        string getTextoPárrafoActual(RichTextBox rtf) //listo
+        string getTextoPárrafoActual() //listo
         {
-            Paragraph párrafo = getPárrafoActual(rtf);
+            Paragraph párrafo = getPárrafoActual();
             return new TextRange(párrafo.ElementStart, párrafo.ElementEnd).Text;
         }
 
-        bool swPrincipioDeLaHoja(RichTextBox rtf) //listo
+        bool swPrincipioDeLaHoja() //listo
         {
             TextPointer punteroPosActual = rtf.Selection.Start;
             string cadena = punteroPosActual.GetTextInRun(LogicalDirection.Backward);
@@ -117,7 +165,7 @@ namespace mochila
                 return true;
         }
 
-        bool swFinDeLaHoja(RichTextBox rtf) //listo
+        bool swFinDeLaHoja() //listo
         {
             TextPointer punteroPosActual = rtf.Selection.Start;
             string cadena = punteroPosActual.GetTextInRun(LogicalDirection.Forward);
@@ -128,7 +176,7 @@ namespace mochila
                 return true;
         }
 
-        bool abrirRTF(RichTextBox rtf, string ruta) //listo
+        public bool abrirRTF(string ruta) //listo
         {
             TextRange range;
             FileStream fStream;
@@ -146,7 +194,7 @@ namespace mochila
                 return false; //si no existe el archivo, false
         }
 
-        private void guardarRTF(string filename, RichTextBox richTextBox) //listo
+        private void guardarRTF(string filename) //listo
         {
             if (string.IsNullOrEmpty(filename))
             {
@@ -158,7 +206,7 @@ namespace mochila
             using (FileStream stream = File.OpenWrite(rutaEnsamblado + filename))
             {
                 // create a TextRange around the entire document
-                TextRange documentTextRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+                TextRange documentTextRange = new TextRange(rtf.Document.ContentStart, rtf.Document.ContentEnd);
 
                 // sniff out what data format you've got
                 string dataFormat = DataFormats.Text;
@@ -175,7 +223,7 @@ namespace mochila
             }
         }
 
-        private void imprimirRTF(RichTextBox rtf, bool swMostrarCuadroDiálogo) //listo
+        private void imprimirRTF(bool swMostrarCuadroDiálogo) //listo
         {
             if (swMostrarCuadroDiálogo)
             {
@@ -200,11 +248,11 @@ namespace mochila
             }
             else
             {
-                imprimirRTF(rtf);
+                imprimirRTF();
             }
         }
 
-        private void imprimirRTF(RichTextBox rtf) //TODO que pueda elegir qué impresora usar para imprimir
+        private void imprimirRTF() //TODO que pueda elegir qué impresora usar para imprimir
         {
             // crear el cuadro de dialogo de impresion y mostrarlo
             PrintDialog pDialog = new PrintDialog();
@@ -222,7 +270,7 @@ namespace mochila
             pDialog.PrintDocument(dps.DocumentPaginator, "impresion");
         }
 
-        bool swHojaVacía(RichTextBox rtf) //listo
+        bool swHojaVacía() //listo
         {
             if (new TextRange(rtf.Document.ContentStart, rtf.Document.ContentEnd).Text != "")
                 return true;
@@ -230,29 +278,101 @@ namespace mochila
                 return false;
         }
 
-        int getNúmeroLíneaActual(RichTextBox rtf)
+        public SpellingError chequearOrtografíaEnPosActual()
+        {
+            return rtf.GetSpellingError(rtf.CaretPosition);    
+        }
+
+        private void rtf_ContextMenuOpening(object sender, System.Windows.Controls.ContextMenuEventArgs e)
+        {
+            ContextMenu menu = this.Resources["ctxMenu"] as ContextMenu;
+            this.ClearSpellCheckMenuItems(menu);
+            SpellingError error = chequearOrtografíaEnPosActual();
+            if (error != null)
+            {
+                this.rtf.ContextMenu.Items.Insert(0, new Separator());
+                MenuItem item = this.GetMenu("Ignore All", EditingCommands.IgnoreSpellingError, this.rtf);
+                item.Tag = "S";
+                this.rtf.ContextMenu.Items.Insert(0, item);
+                foreach (string suggession in error.Suggestions)
+                {
+                    item = this.GetMenu(suggession, EditingCommands.CorrectSpellingError, this.rtf);
+                    item.Tag = "S";
+                    this.rtf.ContextMenu.Items.Insert(0, item);
+                }
+
+                
+                //lstSuggessions.Items.Clear();
+                //error = chequearOrtografíaEnPosActual();
+                //if (error != null)
+                //{
+                //    foreach (string suggession in error.Suggestions)
+                //        lstSuggessions.Items.Add(suggession);
+                //}
+
+
+                //TODO no funka el manejador
+                //menu.KeyUp += new System.Windows.Input.KeyEventHandler(menu_KeyUp);
+                //rtf.ContextMenu.KeyDown += new System.Windows.Input.KeyEventHandler(ContextMenu_KeyDown);
+            }
+        }
+
+        void ContextMenu_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Down)
+                MessageBox.Show(((Menu)sender).Items[0].ToString());
+        }
+
+        //void menu_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        //{
+        //    if (e.Key == Key.Down)
+        //        MessageBox.Show(((Menu)sender).Items[0].ToString());
+        //}
+
+        private MenuItem GetMenu(string header, ICommand command, TextBoxBase target)
+        {
+            MenuItem item = new MenuItem();
+            item.Header = header;
+            item.Command = command;
+            item.CommandParameter = header;
+            item.CommandTarget = target;
+            return item;
+        }
+
+        private void ClearSpellCheckMenuItems(ContextMenu menu)
+        {
+            for (int i = 0; i < menu.Items.Count; i++)
+            {
+                MenuItem item = menu.Items[i] as MenuItem;
+                if (item != null && item.Tag != null)
+                    menu.Items.RemoveAt(i);
+            }
+        }
+
+        int getNúmeroLíneaActual()
         {
             return 0;
         }
 
-        string getLetraSiguiente(RichTextBox rtf)
+        string getLetraSiguiente()
         {
             string cadena = "";
 
             return cadena;
         }
 
-        string getLetraAnterior(RichTextBox rtf)
+        string getLetraAnterior()
         {
             string cadena = "";
 
             return cadena;
         }
 
-        bool swMedioDelRenglón(RichTextBox rtf)
+        bool swMedioDelRenglón()
         {
             return false;
         }
+
 
     }
 }
@@ -322,3 +442,4 @@ End Sub
 
 
 */
+

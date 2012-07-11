@@ -26,7 +26,7 @@ namespace mochila
         public MainWindow()
         {
             InitializeComponent();
-
+            
             //    palabra = "hola";
             //    textBlock1.Text = palabra;
             //    List<string> nombres = new List<string>();

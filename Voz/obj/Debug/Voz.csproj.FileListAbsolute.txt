@@ -7,3 +7,7 @@ E:\Documents\Visual Studio 2010\Projects\WpfApplication1\Voz\bin\Debug\Voz.dll
 E:\Documents\Visual Studio 2010\Projects\WpfApplication1\Voz\bin\Debug\Voz.pdb
 E:\Documents\Visual Studio 2010\Projects\WpfApplication1\Voz\obj\Debug\Voz.dll
 E:\Documents\Visual Studio 2010\Projects\WpfApplication1\Voz\obj\Debug\Voz.pdb
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Voz\bin\Debug\Voz.dll
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Voz\bin\Debug\Voz.pdb
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Voz\obj\Debug\Voz.dll
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Voz\obj\Debug\Voz.pdb

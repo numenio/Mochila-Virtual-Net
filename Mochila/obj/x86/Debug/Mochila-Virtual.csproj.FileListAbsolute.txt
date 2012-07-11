@@ -18,3 +18,27 @@ E:\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86
 E:\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\Mochila-Virtual-Net.g.resources
 E:\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\Mochila-Virtual-Net.exe
 E:\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\Mochila-Virtual-Net.pdb
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\bin\Debug\Mochila-Virtual-Net.exe.config
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\bin\Debug\Mochila-Virtual-Net.exe
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\bin\Debug\Mochila-Virtual-Net.pdb
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\bin\Debug\Voz.dll
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\bin\Debug\Voz.pdb
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual.csprojResolveAssemblyReference.cache
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\MainWindow.baml
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Ventana.baml
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Window1.baml
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\MainWindow.g.cs
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Ventana.g.cs
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Window1.g.cs
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\App.g.cs
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual-Net_MarkupCompile.cache
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual-Net.g.resources
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\mochila.Form1.resources
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\mochila.Properties.Resources.resources
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual.csproj.GenerateResource.Cache
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual-Net.exe
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual-Net.pdb
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Hoja.baml
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Hoja.g.cs
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual-Net_MarkupCompile.lref

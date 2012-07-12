@@ -54,12 +54,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -77,35 +74,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Actividad.cs" />
-    <Compile Include="AdminDiccionario.cs" />
-    <Compile Include="AdminMaterias.cs" />
-    <Compile Include="AdminPrograma.cs" />
-    <Compile Include="AdminRecordatorio.cs" />
-    <Compile Include="AdminUsuario.cs" />
-    <Compile Include="Calculadora.cs" />
-    <Compile Include="Calendario.cs" />
-    <Compile Include="CapítuloLibro.cs" />
-    <Compile Include="Comunicado.cs" />
-    <Compile Include="Diccionario.cs" />
-    <Compile Include="Evaluación.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Hoja.xaml.cs">
       <DependentUpon>Hoja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Libro.cs" />
-    <Compile Include="Materia.cs" />
-    <Compile Include="Mochila.cs" />
-    <Compile Include="Parser.cs" />
-    <Compile Include="Preferencias.cs" />
-    <Compile Include="Recordatorio.cs" />
-    <Compile Include="Texto.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="MsgBox.xaml.cs">
+      <DependentUpon>MsgBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventana.xaml.cs">
       <DependentUpon>Ventana.xaml</DependentUpon>
     </Compile>
@@ -128,6 +102,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MsgBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,9 +129,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

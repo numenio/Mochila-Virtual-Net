@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
@@ -25,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Diagnostics;
 
 
 namespace mochila
@@ -40,6 +33,7 @@ namespace mochila
 		public Hoja()
 		{
 			this.InitializeComponent();
+            menu.AddHandler(UIElement.KeyDownEvent, new KeyEventHandler(ContextMenu_KeyDown), true);
 		}
 
         //public static readonly DependencyProperty DocumentProperty =
@@ -176,6 +170,7 @@ namespace mochila
                 return true;
         }
 
+        ////abrirRTF(richTextBox1, "doc2.rtf");
         public bool abrirRTF(string ruta) //listo
         {
             TextRange range;
@@ -194,6 +189,7 @@ namespace mochila
                 return false; //si no existe el archivo, false
         }
 
+        ////guardarRTF("prueba.rtf", richTextBox1);
         private void guardarRTF(string filename) //listo
         {
             if (string.IsNullOrEmpty(filename))
@@ -223,6 +219,7 @@ namespace mochila
             }
         }
 
+        //imprimirRTF(richTextBox1);
         private void imprimirRTF(bool swMostrarCuadroDiálogo) //listo
         {
             if (swMostrarCuadroDiálogo)
@@ -317,10 +314,21 @@ namespace mochila
             }
         }
 
+        //private void Window_ContentRendered(object sender, EventArgs e)
+        //{
+        //    menu.AddHandler(UIElement.KeyDownEvent, new KeyEventHandler(ContextMenu_KeyDown), true);
+        //}
+        int contador = 0;
         void ContextMenu_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.Down)
-                MessageBox.Show(((Menu)sender).Items[0].ToString());
+            {
+                
+                ContextMenu menu = (ContextMenu)sender;
+                MenuItem item = (MenuItem)menu.Items.GetItemAt(contador);
+                Debug.Print(item.Header.ToString());
+                contador++;
+            }
         }
 
         //void menu_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)

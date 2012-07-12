@@ -42,3 +42,5 @@ C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Ho
 C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Hoja.g.cs
 C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\Mochila-Virtual-Net_MarkupCompile.lref
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\MsgBox.baml
+C:\Users\guillermo\Documents\GitHub\Mochila-Virtual-Net\Mochila\obj\x86\Debug\MsgBox.g.cs

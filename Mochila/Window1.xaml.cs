@@ -483,34 +483,13 @@ namespace mochila
 
         private void label1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ////abrirRTF(richTextBox1, "doc2.rtf");
-            ////guardarRTF("prueba.rtf", richTextBox1);
-            //imprimirRTF(richTextBox1);
-            ////label1.Content = getPalabra(richTextBox1);
-            //label1.Content = "";
-            //if (swPrincipioDeLaHoja(richTextBox1))
-            //    label1.Content += ", comienzo de la hoja";
-            //if (swFinDeLaHoja(richTextBox1))
-            //    label1.Content += ", fin de la hoja";
-
-            //TextSelection texto = richTextBox1.Selection;
-            //Texto txt = new Texto();
-            //txt.pasarANegrita(texto);
-            Calculadora calc = new Calculadora();
-            //calc.parsearCadena(texto.Text);
-            //calc.result;
-            label1.Content = calc.result;
+            
             if (swEstáEnNegrita(hoja.rtf.Selection))
                 label1.Content = "negrita";
             //Paragraph párrafo = richTextBox1.CaretPosition.Paragraph;
             //Inline textoInterno = párrafo.Inlines.FirstInline;
 
-            //string cadena = new TextRange(textoInterno.ContentStart, textoInterno.ContentEnd).Text;
-
-            //if (adminTexto.EstáEnCursiva(párrafo))
-            //    label1.Content = "en negrita";
-            //else
-            //    label1.Content = textoInterno;//cadena;//"nones";
+            
             SpellingError error = hoja.chequearOrtografíaEnPosActual();
             if (error != null)
             {
@@ -518,6 +497,8 @@ namespace mochila
                     //lstSuggessions.Items.Add(suggession);
                     label1.Content += suggession + " ";
             }
+
+            //Correo.enviar("guillermo.toscani@gmail.com", "hola", "hola");
 
         }
 

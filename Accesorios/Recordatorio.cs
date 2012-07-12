@@ -5,22 +5,16 @@ using System.Text;
 
 namespace mochila
 {
-    class Recordatorio
+    public class Recordatorio
     {
+        public string texto { get; set; }
+        public DateTime fecha { get; set; }
+        public int id { get; set; }
     }
 }
 
 
 /*
-Public Type Recordatorio
-    texto As String * 64
-    fecha As Date
-    hora As Date
-    sonido As String * 64
-    yaAnunciado As Boolean
-    índiceEnArchivo As Long
-End Type
-
 
 Public Function cantDíasMes(quéMes As Byte, quéAño As Integer) As Byte
     Select Case quéMes
